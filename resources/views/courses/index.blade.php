@@ -16,6 +16,18 @@
             </div>
         @endif
 
+        <!-- Add Course - moved to top -->
+        <div class="bg-white p-4 rounded shadow mb-8">
+            <h2 class="text-lg font-semibold mb-2">➕ Add New Course</h2>
+            <form action="/courses" method="POST">
+                @csrf
+                <div class="flex gap-2">
+                    <input type="text" name="title" required placeholder="Course Title" class="border px-2 py-1 rounded w-1/2">
+                    <button type="submit" class="bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600">Add Course</button>
+                </div>
+            </form>
+        </div>
+
         <!-- Course List -->
         @foreach ($courses as $course)
             <div class="bg-white p-4 rounded shadow mb-6">
@@ -94,18 +106,6 @@
                 </form>
             </div>
         @endforeach
-
-        <!-- Add Course -->
-        <div class="bg-white p-4 rounded shadow mt-8">
-            <h2 class="text-lg font-semibold mb-2">➕ Add New Course</h2>
-            <form action="/courses" method="POST">
-                @csrf
-                <div class="flex gap-2">
-                    <input type="text" name="title" required placeholder="Course Title" class="border px-2 py-1 rounded w-1/2">
-                    <button type="submit" class="bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600">Add Course</button>
-                </div>
-            </form>
-        </div>
     </div>
 </body>
 </html>
